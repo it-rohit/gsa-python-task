@@ -1,0 +1,42 @@
+<!-- templates/tasks/task_list.html -->
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task List</title>
+</head>
+<body>
+    <h1>Task List for {{ user.username }}</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Date/Time</th>
+                <th>Assigned To</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in tasks %}
+            <tr>
+                <td>{{ task.name }}</td>
+                <td>{{ task.date_time }}</td>
+                <td>{{ task.assigned_to }}</td>
+                <td>{{ task.status }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+</body>
+</html>
+
+<!-- <ul>
+    {% for task in tasks %}
+    <li>{{ task.name }}</li>
+    <li>{{ task.date_time }}</li>
+    <li>{{ task.assigned_to }}</li>
+    <li>{{ task.status }}</li>
+    {% endfor %}
+</ul> -->
